@@ -32,3 +32,9 @@ jobs:
         ls
         date +20%y%m%d
         ls -lrt
+        cd ~
+        ls -lrt
+        echo "================================================"
+        git clone https://github.com/zephyrproject-rtos/qm.git
+        echo "================================================"
+        ls -lrt
