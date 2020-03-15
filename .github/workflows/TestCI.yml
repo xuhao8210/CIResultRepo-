@@ -30,4 +30,5 @@ jobs:
         echo Add other actions to build,
         echo test, and deploy your project.
         ls
+        date +20%y%m%d
         ls -lrt
