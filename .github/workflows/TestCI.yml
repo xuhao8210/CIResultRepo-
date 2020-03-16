@@ -55,6 +55,6 @@ jobs:
     - name: invoke the upload.sh script to upload all test results into Test Rail. 
       run: |
         pwd    
-        ls -lrt ~/qm/scripts/test_reports/junit4TestRail/
         sh -x script/upload.sh
+        ls -lrt ~/qm/scripts/test_reports/junit4TestRail/
        
