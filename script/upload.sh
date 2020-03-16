@@ -6,8 +6,7 @@ TESTRAILPATH="$HOME/qm/scripts/test_reports"
 COMMITID=""
 
 if [ -d "$TESTRAILPATH" ] ; then
-	if [ -d "$TESTRAILPATH/junit4TestRail" ]; then
-        rm -rf "$TESTRAILPATH/junit4TestRail"
+	if [ ! -d "$TESTRAILPATH/junit4TestRail" ]; then
 	   	mkdir "$TESTRAILPATH/junit4TestRail"
     fi
 else
