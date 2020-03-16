@@ -33,6 +33,11 @@ fi
 
 BDH="CIMaster-${DATE1}-${COMMITID}"
 cd $TESTRAILPATH
+ls
+chmod 755 report.py
 echo "===================================================="
-python3 report.py --runner sanitycheckbatch -j junit4TestRail -V "$BDH"    -p 5 -s 54 -m 9
+CMD="python3 report.py --runner sanitycheckbatch -j junit4TestRail -V "$BDH"    -p 5 -s 54 -m 9"
+echo $CMD
+$CMD
 echo "===================================================="
+ls -lrt
