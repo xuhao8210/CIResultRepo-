@@ -14,18 +14,15 @@ else
 fi	
 
 if [ -d "$DATE" ]; then
-   COMMITID=`head -1 $DATE/version.log | awk -F: '{print $2}' | awk '{print $1}'`
-   for PLAT in `ls $DATE`
+   for PLFILE in `ls $DATE`
    do
-      if [ -d "$DATE/$PLAT" ]; then
-         for junit in `ls "$DATE/$PLAT"`
-		 do
-             if [ -f "$DATE/$PLAT/$junit" ]; then
-                  cp "$DATE/$PLAT/$junit" "$TESTRAILPATH/junit4TestRail"
-			 fi	 
+     if [ "$PLFILE" == "version.log" ]; then
+ 
+         COMMITID=`head -1 $DATE/version.log | awk -F: '{print $2}' | awk '{print $1}'`
+     else
+         cp "$DATE/$PLFILE" "$TESTRAILPATH/junit4TestRail"
 
-		 done
-	  fi	  
+	 fi	  
 
    done
 fi
