@@ -16,12 +16,10 @@ fi
 if [ -d "$DATE" ]; then
    for PLFILE in `ls $DATE`
    do
-     if [ "$PLFILE" == "version.log" ]; then
- 
+     if [ "$PLFILE" = "version.log" ]; then
          COMMITID=`head -1 $DATE/version.log | awk -F: '{print $2}' | awk '{print $1}'`
      else
          cp "$DATE/$PLFILE" "$TESTRAILPATH/junit4TestRail"
-
 	 fi	  
 
    done
